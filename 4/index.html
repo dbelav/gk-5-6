@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPrime(number) {
+
+            if (number === 0 || number === 1) return false
+
+            if (number < 0) number *= -1
+            // ------------------------
+            if (number === 0 || number === 1) {
+                return false
+            }
+            if (number < 0) {
+                number *= -1
+            }
+
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false
+                }
+            }
+            return true
+        }
+        console.log(isPrime(-17))
+
+        function factorial(number) {
+            let a = 1
+            for (let i = 1; i <= number; i++) {
+                a *= i
+            }
+            return a
+        }
+        factorial(32)
+
+        function fib(number) {
+            if (number <= 1) {
+                return number
+            } else {
+                return fib(number - 1) + fib(number - 2)
+            }
+        }
+        fib(8)
+
+        let fib1 = number => number <= 1 ? number : fib(number - 1) + fib1(number - 2)
+
+        function isSorted(array) {
+            let firstNum = array[0]
+            for (let i = 1; i < array.length; i++) {
+                if (firstNum > array[i]) {
+                    return false
+                }
+                firstNum = array[i]
+            }
+            return true
+        }
+        isSorted([-Infinity, -1, 5, 2, 10])
+
+        function reverse(str) {
+            let arr = []
+            for (let i = str.length - 1; i >= 0; i--) {
+                arr.push(str[i])
+            }
+            return arr.join('')
+        }
+        console.log(reverse('abcdef'))
+
+        function indexOf(array, index) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === index) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        indexOf([1, 2, 3, 4], 2)
+
+        function isPalindrome(str) {
+            let arr = str.toLowerCase().replace(/\s+/g, '').split('')
+            let arrLength = arr.length
+            if (arrLength % 2 === 0) {
+                return false
+            }
+            for (let i = 0; i < arrLength / 2 + 0.5 - 1; i++) {
+                if (arr[i] !== arr[arrLength - i - 1]) {
+                    return false
+                }
+            }
+            return true
+        }
+        isPalindrome('A man a plan a canal Panama')
+
+        function missing(arr) {
+            arr.sort((a, b) => a - b)
+            let length = arr.length
+            if (length === 0) return null
+            if (arr[0] != 1) return 1
+            for (let i = 0; i < length; i++) {
+                if (arr[i] !== arr[i + 1] - 1 && i !== length - 1) {
+                    return arr[i] + 1
+                }
+            }
+            return null
+        }
+        missing([2, 3, 4])
+    </script>
+
+</body>
+
+</html>

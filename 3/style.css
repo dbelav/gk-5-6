@@ -1,0 +1,48 @@
+.container {
+  width: 512px;
+  height: 512px;
+  text-align: center;
+  margin: 0 auto;
+  background-image: url(https://kikill95.github.io/Tagging/image.jpg);
+  background-repeat: no-repeat;
+  border: 2px solid black;
+  background-position: center;
+  position: relative;
+}
+
+.container .dragElement {
+  position: absolute;
+}
+
+.container .dragElement .elem, .container .dragElement .delete {
+  background-color: rgba(78, 74, 74, 0.637);
+  height: 30px;
+  color: #fff;
+  border: hidden;
+}
+
+.container .dragElement .elem {
+  width: 100px;
+}
+
+.container .dragElement .delete {
+  margin-left: -4px;
+  width: 30px;
+}
+
+.container .a1 {
+  bottom: 100px;
+}
+
+.container .a2 {
+  bottom: 200px;
+}
+
+.container .a3 {
+  bottom: 300px;
+}
+
+.displayNone {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
